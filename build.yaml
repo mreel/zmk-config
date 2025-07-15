@@ -20,4 +20,6 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: cobra_cadence
+    shield: cobra_cadence_left
+  - board: seeeduino_xiao_ble
+    shield: cobra_cadence_right
