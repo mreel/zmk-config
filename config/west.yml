@@ -10,7 +10,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: cobra_cadence
+    - name: cobra_cadence_module
       remote: cobra_cadence_module
       revision: main
   self:
