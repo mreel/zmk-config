@@ -41,7 +41,7 @@
     physical_layout0: physical_layout_0 { // Only layout
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        kscan = &kscan0;
+        kscan = <&kscan0>;
         transform = <&default_transform>;
     };
 
