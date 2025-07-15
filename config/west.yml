@@ -4,14 +4,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: cobra_cadence
-      url-base: https://github.com/mreel/cobra_cadence_module
+    - name: cobra_cadence_module
+      url-base: https://github.com/mreel
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
     - name: cobra_cadence
-      remote: cobra_cadence
+      remote: cobra_cadence_module
       revision: main
   self:
     path: config
