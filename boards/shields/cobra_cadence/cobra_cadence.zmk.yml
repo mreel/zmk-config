@@ -1,0 +1,12 @@
+file_format: "1"
+id: cobra_cadence
+name: Cobra Cadence
+type: shield
+url: https://mreel.github.io/tibo_loete/
+requires:
+  - seeed_xiao
+features:
+  - keys
+siblings:
+  - cobra_cadence_left
+  - cobra_cadence_right
