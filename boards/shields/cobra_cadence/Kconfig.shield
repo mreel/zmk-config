@@ -1,0 +1,8 @@
+# Copyright (c) 2025 Tibo Loete
+# SPDX-License-Identifier: MIT
+
+config SHIELD_COBRA_CADENCE_LEFT
+    def_bool $(shields_list_contains,cobra_cadence_left)
+
+config SHIELD_COBRA_CADENCE_RIGHT
+    def_bool $(shields_list_contains,cobra_cadence_right)
