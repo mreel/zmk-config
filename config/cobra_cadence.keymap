@@ -25,7 +25,7 @@
                 &kp Q       &kp W       &kp D       &kp F       &kp G                   &kp Y       &kp U       &kp R       &kp L       &kp P
                 &kp A       &kp S       &kp E       &kp T                                           &kp N       &kp I       &kp O       &kp H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp M       &kp J       &kp K       &kp DOT     &kp COMMA
-                                        &num_tab    &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
+                                        num_tab    &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
             >;
         };
 
