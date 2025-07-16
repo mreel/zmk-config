@@ -31,7 +31,7 @@
 
         number_layer {
             bindings = <
-                &trans                                                                                                                  &bootloader
+                &bootloader                                                                                                             &bootloader
                 &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
                 &trans      &trans      &trans      &trans                                          &trans      &trans      &trans      &trans
                 &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
