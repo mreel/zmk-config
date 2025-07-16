@@ -7,18 +7,49 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define L_DEF 0
+#define L_NUM 1
+#define L_SYM 2
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+&lt { quick-tap-ms = <200>; };
+
+aliases {
+    num_tab = &lt L_NUM TAB;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer { // Layer 0
             bindings = <
-                &bootloader                                                                                                         &bootloader
-                &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &kp S       &kp D       &kp F                                       &kp J       &kp K       &kp L       &kp H
-                &kp Z       &kp X       &kp C       &kp V       &kp B               &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                                        &kp LSHFT   &kp SPACE   &kp LCMD            &kp BSPC    &kp ENTER   &kp LALT
+                &esc                                                                                                                    &kp C_PLAY_PAUSE
+                &kp Q       &kp W       &kp D       &kp F       &kp G                   &kp Y       &kp U       &kp R       &kp L       &kp P
+                &kp A       &kp S       &kp E       &kp T                                           &kp N       &kp I       &kp O       &kp H
+                &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp M       &kp J       &kp K       &kp DOT     &kp COMMA
+                                        num_tab     &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
             >;
         };
+
+        number_layer {
+            bindings = <
+                &trans                                                                                                                  &bootloader
+                &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans                                          &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
+                                        &trans      &trans      &trans                  &trans      &trans      &trans
+            >;
+        };
+
+        symbol_layer {
+            bindings = <
+                &trans                                                                                                              &trans
+                &trans      &trans      &trans      &trans      &trans              &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans                                      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans              &trans      &trans      &trans      &trans      &trans
+                                        &trans      &trans      &trans              &trans      &trans      &trans
+            >;
+        }
     };
  };
