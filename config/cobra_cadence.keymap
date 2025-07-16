@@ -14,11 +14,11 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
 
-aliases {
-    num_tab = &lt L_NUM TAB;
-};
-
 / {
+    aliases {
+        num_tab = &lt L_NUM TAB;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
