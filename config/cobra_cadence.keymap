@@ -82,7 +82,7 @@
             };
             combo_MUTE {
                 key-positions = <8 26>;
-                bindings = <&kp MUTE>;
+                bindings = <&kp C_MUTE>;
                 layers = <LAYER_MEDIA>;
             };
             combo_EQUAL {
