@@ -13,12 +13,18 @@
 #define LAYER_NAV 1
 #define LAYER_MOUSE 2
 #define LAYER_MEDIA 3
-#define LAYER_NUM 4
-#define LAYER_SYM 5
+#define LAYER_NUMBER 4
+#define LAYER_SYMBOL 5
 #define LAYER_FUNCTION 6
 
+
+// ----------------
 // shorter keycodes
+// ----------------
+
 #define ______ &trans
+
+// nav & clipboard
 #define kp_undo &kp LG(Z)
 #define kp_redo &kp LS(LG(Z))
 #define kp_copy &kp LG(C)
@@ -26,6 +32,8 @@
 #define kp_cut &kp LG(X)
 #define kp_wrd_lft &kp LA(LEFT)
 #define kp_wrd_rgt &kp LA(RIGHT)
+
+// mouse
 #define mouse_left &mmv MOVE_LEFT
 #define mouse_down &mmv MOVE_DOWN
 #define mouse_up &mmv MOVE_UP
@@ -34,8 +42,19 @@
 #define scroll_down &msc SCRL_DOWN
 #define scroll_up &msc SCRL_UP
 #define scroll_right &msc SCRL_RIGHT
+
+// media
 #define vol_down &kp C_VOL_DN
 #define vol_up &kp C_VOL_UP
+
+// layer tap
+#define lt_med_esc &lt LAYER_MEDIA ESC
+#define lt_nav_spc &lt LAYER_NAV SPACE
+#define lt_mse_tab &lt LAYER_MOUSE TAB
+#define lt_sym_bspc &lt LAYER_SYMBOL BSPC
+#define lt_num_ent &lt LAYER_NUMBER ENTER
+#define lt_fun_del &lt LAYER_FUNCTION DEL
+
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -50,7 +69,7 @@
                 &kp Q       &kp W       &kp D       &kp F       &kp G                   &kp Y       &kp U       &kp R       &kp L       &kp P
                 &kp A       &kp S       &kp E       &kp T           /*G*/             /*Y*/         &kp N       &kp I       &kp O       &kp H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp M       &kp J       &kp K       &kp DOT     &kp COMMA
-                                        &kp ESC     &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
+                                        lt_med_esc  lt_nav_spc  lt_mse_tab              lt_sym_bspc lt_num_ent  lt_fun_del
             >;
         };
 
