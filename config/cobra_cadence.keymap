@@ -7,10 +7,23 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define L_DEF 0
-#define L_NUM 1
-#define L_SYM 2
-#define num_tab &lt L_NUM TAB
+// layers
+#define LAYER_BASE 0
+#define LAYER_NAV 1
+#define LAYER_MOUSE 2
+#define LAYER_MEDIA 3
+#define LAYER_NUM 4
+#define LAYER_SYM 5
+#define LAYER_FUNCTION 6
+
+// shorter keycodes
+#define kp_undo &kp LG(Z)
+#define kp_redo &kp LS(LG(Z))
+#define kp_copy &kp LG(C)
+#define kp_paste &kp LG(V)
+#define kp_cut &kp LG(X)
+#define kp_wrd_lft &kp LA(LEFT)
+#define kp_wrd_rgt &kp LA(RIGHT)
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
@@ -19,27 +32,27 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0
+        default_layer {                 // 0
             bindings = <
                 &kp ESC                                                                                                                    &kp C_PLAY_PAUSE
                 &kp Q       &kp W       &kp D       &kp F       &kp G                   &kp Y       &kp U       &kp R       &kp L       &kp P
                 &kp A       &kp S       &kp E       &kp T                                           &kp N       &kp I       &kp O       &kp H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp M       &kp J       &kp K       &kp DOT     &kp COMMA
-                                        num_tab     &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
+                                        &kp ESC     &kp SPACE   &kp TAB                 &kp BSPC    &kp ENTER   &kp DEL
             >;
         };
 
-        number_layer {
+        navigation_layer {              // 1
             bindings = <
                 &bootloader                                                                                                             &bootloader
-                &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans                                          &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans                  &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans                  kp_redo     kp_paste    kp_copy     kp_cut      kp_undo
+                &kp LCTRL   &kp LALT    &kp LCMD    &kp LSHFT                                       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT
+                &trans      &trans      &trans      &trans      &trans                  &kp INS     &kp HOME    kp_wrd_lft  kp_wrd_rgt  &kp END
                                         &trans      &trans      &trans                  &trans      &trans      &trans
             >;
         };
 
-        symbol_layer {
+        mouse_layer {                   // 2
             bindings = <
                 &trans                                                                                                              &trans
                 &trans      &trans      &trans      &trans      &trans              &trans      &trans      &trans      &trans      &trans
