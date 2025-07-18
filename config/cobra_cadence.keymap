@@ -84,7 +84,7 @@
             >;
         };
 
-        number_layer {                   // 4
+        number_layer {                  // 4
             bindings = <
                 ______                                                                                                                  ______
                 &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT                ______      ______      ______      ______      ______
@@ -94,10 +94,28 @@
             >;
         };
 
+        symbol_layer {                  // 5
+            bindings = <
+                ______                                                                                                                  ______
+                &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC                ______      ______      ______      ______      ______
+                &kp COLON   &kp DLLR    &kp PRCNT   &kp CARET       /*+*/             /* */         &kp RSHFT   &kp RCMD    &kp RALT    &kp RCTRL
+                &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE                ______      ______      ______      ______      ______
+                                        &kp LPAR    &kp RPAR    &kp UNDER               ______      ______      ______
+            >;
+        };
 
+        function_layer {                // 6
+            bindings = <
+                ______                                                                                                                  ______
+                &kp F12     &kp F7      &kp F8      &kp F9      &kp PSCRN               ______      ______      ______      ______      ______
+                &kp F11     &kp F4      &kp F5      &kp F6          /* */             /* */         &kp RSHFT   &kp RCMD    &kp RALT    &kp RCTRL
+                &kp F10     &kp F1      &kp F2      &kp F3      ______                  ______      ______      ______      ______      ______
+                                        &kp K_CMENU ______      ______                  ______      ______      ______
+            >;
+        };
 
         /*
-        empty_layer {                   // 3
+        empty_layer {                   // x
             bindings = <
                 ______                                                                                                                  ______
                 ______      ______      ______      ______      ______                  ______      ______      ______      ______      ______
