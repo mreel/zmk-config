@@ -34,12 +34,14 @@
 #define scroll_down &msc SCRL_DOWN
 #define scroll_up &msc SCRL_UP
 #define scroll_right &msc SCRL_RIGHT
+#define vol_down &kp C_VOL_DN
+#define vol_up &kp C_VOL_UP
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick-tap-ms = <200>; };
 
 / {
-    keymap {
+    keymap {                            // comments in keymap are combos
         compatible = "zmk,keymap";
 
         default_layer {                 // 0
@@ -71,5 +73,39 @@
                                         ______      ______      ______                  &mkp RCLK   &mkp LCLK   &mkp MCLK
             >;
         };
+
+        media_layer {                   // 3
+            bindings = <
+                ______                                                                                                                  ______
+                ______      ______      ______      ______      ______                  ______      ______      ______      ______      ______
+                &kp LCTRL   &kp LALT    &kp LCMD    &kp LSHFT       /* */          /*mute*/         &kp C_PREV  vol_down    vol_up      &kp C_NEXT
+                ______      ______      ______      ______      ______                  ______      ______      ______      ______      ______
+                                        ______      ______      ______                  ______      &kp C_PP    ______
+            >;
+        };
+
+        number_layer {                   // 4
+            bindings = <
+                ______                                                                                                                  ______
+                &kp LBKT    &kp N7      &kp N8      &kp N9      &kp RBKT                ______      ______      ______      ______      ______
+                &kp SEMI    &kp N4      &kp N5      &kp N6          /*+=*/            /* */         &kp RSHFT   &kp RCMD    &kp RALT    &kp RCTRL
+                &kp GRAVE   &kp N1      &kp N2      &kp N3      &kp BSLH                ______      ______      ______      ______      ______
+                                        &kp DOT     &kp N0      &kp MINUS               ______      ______      ______
+            >;
+        };
+
+
+
+        /*
+        empty_layer {                   // 3
+            bindings = <
+                ______                                                                                                                  ______
+                ______      ______      ______      ______      ______                  ______      ______      ______      ______      ______
+                ______      ______      ______      ______          /-             /-         ______      ______      ______      ______
+                ______      ______      ______      ______      ______                  ______      ______      ______      ______      ______
+                                        ______      ______      ______                  ______      ______      ______
+            >;
+        };
+        */
     };
  };
