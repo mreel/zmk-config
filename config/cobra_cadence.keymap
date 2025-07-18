@@ -66,34 +66,32 @@
             compatible = "zmk,combos";
             combo_G {
                 //timeout-ms = <50>;
-                key-positions = <7 25>;
+                key-positions = <6 24>;
                 bindings = <&kp G>;
                 layers = <LAYER_BASE>;
             };
             combo_Y {
-                key-positions = <8 26>;
+                key-positions = <7 25>;
                 bindings = <&kp Y>;
                 layers = <LAYER_BASE>;
             };
             combo_CAPS {
-                key-positions = <8 26>;
+                key-positions = <7 25>;
                 bindings = <&kp CAPS>;
                 layers = <LAYER_NAV>;
             };
             combo_MUTE {
-                key-positions = <8 26>;
+                key-positions = <7 25>;
                 bindings = <&kp C_MUTE>;
                 layers = <LAYER_MEDIA>;
             };
             combo_EQUAL {
-                //timeout-ms = <50>;
-                key-positions = <7 25>;
+                key-positions = <6 24>;
                 bindings = <&kp EQUAL>;
                 layers = <LAYER_NUMBER>;
             };
             combo_PLUS {
-                //timeout-ms = <50>;
-                key-positions = <7 25>;
+                key-positions = <6 24>;
                 bindings = <&kp PLUS>;
                 layers = <LAYER_SYMBOL>;
             };
@@ -105,7 +103,7 @@
         default_layer {                 // 0
             bindings = <
                 &kp ESC                                                                                                                    &kp C_PLAY_PAUSE
-                &kp Q       &kp W       &kp D       &kp F       &kp G                   &kp Y       &kp U       &kp R       &kp L       &kp P
+                &kp Q       &kp W       &kp D       &kp F       &kp K                   &kp Y       &kp U       &kp R       &kp L       &kp P
                 &kp A       &kp S       &kp E       &kp T           /*G*/             /*Y*/         &kp N       &kp I       &kp O       &kp H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp M       &kp J       &kp K       &kp DOT     &kp COMMA
                                         lt_med_esc  lt_nav_spc  lt_mse_tab              lt_sym_bspc lt_num_ent  lt_fun_del
