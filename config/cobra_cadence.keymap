@@ -123,7 +123,7 @@
                 &kp Q       &kp W       &kp D       &kp F       &kp K                   &kp J       &kp U       &kp R       &kp L       &kp SQT
                 &mt LCTRL A &mt LALT S  &mt LCMD E  &mt LSHFT T     /*G*/             /*Y*/         &mt RSHFT N &mt RCMD I  &mt RALT O  &mt RCTRL H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp P       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                                        lt_med_esc  lt_nav_spc  hypr_mse_tab              lt_sym_bspc lt_num_ent  lt_fun_del
+                                        lt_med_esc  lt_nav_spc  &hypr_mse_tab           lt_sym_bspc lt_num_ent  lt_fun_del
             >;
         };
 
