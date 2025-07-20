@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/behaviors.h>
 
 // layers
 #define LAYER_BASE 0
@@ -23,6 +24,7 @@
 // ----------------
 
 #define ______ &trans
+#define HYPR LC(LS(LA(LGUI)))
 
 // nav & clipboard
 #define kp_undo &kp LG(Z)
@@ -69,39 +71,48 @@
 
 / {
     combos {
-            compatible = "zmk,combos";
-            combo_G {
-                //timeout-ms = <50>;
-                key-positions = <6 24>;
-                bindings = <&kp G>;
-                layers = <LAYER_BASE>;
-            };
-            combo_Y {
-                key-positions = <7 25>;
-                bindings = <&kp Y>;
-                layers = <LAYER_BASE>;
-            };
-            combo_CAPS {
-                key-positions = <7 25>;
-                bindings = <&kp CAPS>;
-                layers = <LAYER_NAV>;
-            };
-            combo_MUTE {
-                key-positions = <7 25>;
-                bindings = <&kp C_MUTE>;
-                layers = <LAYER_MEDIA>;
-            };
-            combo_EQUAL {
-                key-positions = <6 24>;
-                bindings = <&kp EQUAL>;
-                layers = <LAYER_NUMBER>;
-            };
-            combo_PLUS {
-                key-positions = <6 24>;
-                bindings = <&kp PLUS>;
-                layers = <LAYER_SYMBOL>;
-            };
+        compatible = "zmk,combos";
+        combo_G {
+            //timeout-ms = <50>;
+            key-positions = <6 24>;
+            bindings = <&kp G>;
+            layers = <LAYER_BASE>;
         };
+        combo_Y {
+            key-positions = <7 25>;
+            bindings = <&kp Y>;
+            layers = <LAYER_BASE>;
+        };
+        combo_CAPS {
+            key-positions = <7 25>;
+            bindings = <&kp CAPS>;
+            layers = <LAYER_NAV>;
+        };
+        combo_MUTE {
+            key-positions = <7 25>;
+            bindings = <&kp C_MUTE>;
+            layers = <LAYER_MEDIA>;
+        };
+        combo_EQUAL {
+            key-positions = <6 24>;
+            bindings = <&kp EQUAL>;
+            layers = <LAYER_NUMBER>;
+        };
+        combo_PLUS {
+            key-positions = <6 24>;
+            bindings = <&kp PLUS>;
+            layers = <LAYER_SYMBOL>;
+        };
+    };
+
+    behaviors {
+        hypr_mse_tab: hyper-mouse-tab_key {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt HYPR TAB>, <&mo LAYER_MOUSE>;
+        };
+    };
 
     keymap {                            // comments in keymap are combos
         compatible = "zmk,keymap";
@@ -112,7 +123,7 @@
                 &kp Q       &kp W       &kp D       &kp F       &kp K                   &kp J       &kp U       &kp R       &kp L       &kp SQT
                 &mt LCTRL A &mt LALT S  &mt LCMD E  &mt LSHFT T     /*G*/             /*Y*/         &mt RSHFT N &mt RCMD I  &mt RALT O  &mt RCTRL H
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp P       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                                        lt_med_esc  lt_nav_spc  lt_mse_tab              lt_sym_bspc lt_num_ent  lt_fun_del
+                                        lt_med_esc  lt_nav_spc  hypr_mse_tab              lt_sym_bspc lt_num_ent  lt_fun_del
             >;
         };
 
